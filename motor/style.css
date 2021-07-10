@@ -17,8 +17,6 @@
         background-color: rgb(132, 172, 247);
         height: 54px;
         line-height: 54px;
-        padding-right: 20px;
-        padding-left: 20px;
     }
     
     #left_nav>li,
@@ -81,7 +79,7 @@
         top: 7%;
     }
     
-    #banner #title h1 {
+    #title h1 {
         width: 100vw;
         font-size: 90px;
         letter-spacing: -3px;
@@ -107,7 +105,7 @@
         line-height: 35px;
     }
     
-    #slide1 img {
+    #slide_main img {
         width: 100%;
     }
     
@@ -119,8 +117,10 @@
     #beginning_image {
         overflow: hidden;
         border-radius: 10px;
-        width: 50vw;
         background-color: #000;
+        height: 100%;
+        width: auto;
+        max-width: 50vw;
     }
     
     #beginning_image img {
@@ -163,9 +163,24 @@
     }
     
     #slide2 #image_product {
-        height: 1029px;
-        width: 100vw;
+        width: 100%;
         display: flex;
+    }
+    
+    #image_product .pic2 {
+        transform: translateX(-25%);
+    }
+    
+    #wrap_image {
+        width: 33%;
+    }
+    
+    .pic2:hover img {
+        width: 50vw;
+    }
+    
+    #image_product .pic3 {
+        transform: translateX(-75%);
     }
     
     #slide2 #wrap_image {
@@ -187,7 +202,7 @@
         width: 70%;
     }
     
-    #slide2_conclution {
+    #slide2 #slide2_conclution {
         margin: 140px 125.6px;
         text-align: center;
     }
@@ -237,30 +252,30 @@
     
     .team_box .team_name {
         text-align: center;
-        height: 48px;
+        /* height: 48px; */
+        height: 40px;
         margin-bottom: 20px;
         margin-top: 40px;
-        font-size: 25px;
+        font-size: 22px;
         font-weight: 900;
         letter-spacing: -3px;
     }
     
     .team_box .about_team {
         text-align: justify;
-        margin-left: 40px;
-        margin-right: 40px;
     }
     /*contact*/
     
     #contact {
         margin-top: 60px;
-        width: 726px;
+        width: 70vw;
         background-color: #fff;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
         padding: 30px 300px;
         line-height: 90px;
+        text-align: center;
     }
     
     #contact .contact_title {
@@ -315,6 +330,12 @@
         top: 13px;
         font-size: 25px;
     }
+    
+    .check_button input {
+        height: 25px;
+        width: 25px;
+        margin: 10px 0
+    }
     /*email*/
     
     #email {
@@ -324,6 +345,11 @@
         margin-left: 10px;
         border-radius: 5px;
         border: 1px solid #000;
+    }
+    
+    #email h1 {
+        margin: 0 25px 15px 25px;
+        font-size: 60px
     }
     
     #email #email_policy {
@@ -419,6 +445,30 @@
     button:hover {
         cursor: pointer;
     }
+    
+    #header #nav_icon {
+        display: none;
+        font-size: 24px;
+        line-height: 50px;
+        height: 50px;
+        width: 27px;
+        color: #fff;
+        transform: rotate(180deg);
+    }
+    
+    #nav_icon .ti-menu {
+        position: absolute;
+        top: 32%;
+        left: 41%;
+    }
+    
+    #header #overlay {
+        display: none;
+    }
+    
+    #sidebar {
+        transform: translateX(-180%)
+    }
     /* nav animation*/
     
     #header #box_owner {
@@ -436,4 +486,38 @@
         color: #000;
         position: relative;
         z-index: 2;
+    }
+    
+    body {
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 3;
+    }
+    
+    #transSlide {
+        animation-duration: 0.3s;
+        animation-timing-function: linear;
+    }
+    
+    #wrap_session img {
+        width: 15vw;
+        height: auto;
+    }
+    
+    #wrap_session label {
+        margin: 0 30px;
+        border: 1px solid #fff;
+    }
+    
+    #wrap_session {
+        width: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        bottom: 70px;
+    }
+    
+    #wrap_session img {
+        border: 1px solid #fff;
+        margin: 0 20px;
+        width: 15vw;
     }

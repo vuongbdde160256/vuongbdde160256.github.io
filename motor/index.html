@@ -6,10 +6,19 @@
         Moto page
     </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./fontawesome-free-5.15.3-web/css/all.css">
+    <link rel="stylesheet" href="./themify-icons-font/themify-icons/themify-icons.css">
+    <!--[if IE lt 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.43/polyfill.min.js"></script>
+    <![endif]-->
+    <!--for @media query css file, that in older IE dont support-->
+    <!--if IE lt 9 means: IE less 9-->
 </head>
 
 <body>
-    <div id="wrap" style="overflow: hidden;">
+    <div id="wrap" style="overflow: hidden;min-width: 300px;">
         <!--HEADER-->
         <div id="wrap_header">
             <!--NAVIGATION-->
@@ -22,7 +31,19 @@
                     <li id="box_owner">
                         <a href="">OwnerShip</a>
                     </li>
+
                 </ul>
+                <input type="checkbox" id="nav_checkbox" style="display: none;">
+                <label for="nav_checkbox" id="icon">
+                    <i id="nav_icon" class="ti-menu"></i>
+                </label>
+                <label id="wrap_sidebar">
+                    <div id="sidebar" style="overflow: hidden; display: flex; justify-content: center;flex-direction:column;align-items:center;font-size:15px;font-weight: 600;color:#fff;border-radius: 5px;">
+                        <!-- <div id="title" style="margin-top: 10px;width:min-content;height:min-content; line-height: 20px;border-radius: 5px;border:1px solid #fff">INFORMATION</div> -->
+                        <!-- <div id="facebook" style="display: block;"><i class="fab fa-facebook" style="color:#fff;font-size:15px;"></i></div> -->
+                    </div>
+                    <label for="nav_checkbox" id="overlay"><i class="ti-control-forward"></i></label>
+                </label>
 
                 <ul id="right_nav">
                     <li>
@@ -68,8 +89,20 @@
                 <div id="about">
                     <p>Monaco Design Studio is an official department of MV Agusta<br> specialising in the creation of unique models to meet a passionate<br> clientele's demand for the most exclusive, luxury customisation.</p>
                 </div>
-                <div id="slide1">
-                    <img src="./image/slide1.jpg" alt="">
+                <div id="slide_main" style="position: relative;">
+                    <img src="./image/slide1.jpg" alt="" width="100%" id="transSlide">
+
+                    <section id="wrap_session">
+
+                        <img src="./slide/slide1.jpg" id="slide1" alt="" onclick="document.getElementById('transSlide').setAttribute('src','./slide/slide1.jpg').style.opacity('0.5')">
+                        <img src="./slide/slide2.jpg" id="slide2" alt="" onclick="document.getElementById('transSlide').setAttribute('src','./slide/slide2.jpg')">
+                        <img src="./slide/slide3.jpg" id="slide3" alt="" onclick="document.getElementById('transSlide').setAttribute('src','./slide/slide3.jpg')">
+                        <img src="./slide/slide4.jpg" id="slide4" alt="" onclick="document.getElementById('transSlide').setAttribute('src','./slide/slide4.jpg')">
+                        <img src="./slide/slide5.jpg" id="slide5" alt="" onclick="document.getElementById('transSlide').setAttribute('src','./slide/slide5.jpg')">
+
+                        <script src="./animation.js"></script>
+
+                    </section>
                 </div>
                 <div id="the_beginning">
                     <div id="beginning_para">
@@ -83,17 +116,9 @@
 
                 <!--SLIDER-->
                 <div id="slide2">
-                    <div id="image_product">
-                        <div id="wrap_image">
-                            <img src="./image/slide2-1.png" alt="slide 2-1">
-                        </div>
-                        <div id="wrap_image" style="transform: translateX(-15%);">
-                            <img src="./image/slide2-2.png" alt="slide 2-2">
-                        </div>
-                        <div id="wrap_image" style="width:100%;transform: translateX(-25%);">
-                            <img src="./image/slide2-3.png" alt="slide 2-3">
-                        </div>
-                    </div>
+
+
+
                     <!--CONCLUTION-->
                     <div id="slide2_conclution">
                         <p id="conclution">Every biker has the desire to customise their motorcycle to bring it as close as<br> possible to their ultimate bike. The proof of this is the more<br> than one hundred unique pieces made, under the guidance of our<br> designer
@@ -182,14 +207,14 @@
             <div id="wrap_button">
                 <!--CHECK AGREEMENT-->
                 <div class="check_button">
-                    <input style="height:25px;width:25px; margin: 10px 0" class="input_check" type="checkbox">
+                    <input class="input_check" type="checkbox">
                     <p>I agree to the
                         <swap><strong id="policy" style="text-decoration: underline;">Privacy Notice*</strong></swap>
                     </p>
                 </div>
                 <!--CHECK POLICY-->
                 <div class="check_button">
-                    <input style="height:25px;width:25px; margin: 10px 0" class="input_check" type="checkbox">
+                    <input class="input_check" type="checkbox">
                     <p>I agree to the Processing for marketing purposes</p>
                 </div>
                 <!--SUBMIT BUTTON-->
@@ -201,7 +226,7 @@
         <!--EMAIL-->
         <div id="email">
             <p style="margin:17px 25px;">SUBSCRIBE TO OUR NEWSLETTER</p>
-            <h1 style="margin: 0 25px 15px 25px;font-size:60px">YOUR E-MAIL</h1>
+            <h1>YOUR E-MAIL</h1>
             <p style="margin-left:25px;font-size: 20px;">*by sending us e-mail address, you agree with our
                 <swap id="policy">privacy policy</swap>
             </p>
